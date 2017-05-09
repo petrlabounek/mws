@@ -1030,8 +1030,8 @@ class MarketplaceWebService_Client implements MarketplaceWebService_Interface
             CURLOPT_VERBOSE => false,
             CURLOPT_HEADERFUNCTION => array($this, 'headerCallback'),
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_SSL_VERIFYHOST => 2
+            CURLOPT_SSL_VERIFYPEER => $this->config['SSL_VerifyPeer'],
+            CURLOPT_SSL_VERIFYHOST => $this->config['SSL_VerifyHost'],            
         );
     }
 
